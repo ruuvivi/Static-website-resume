@@ -1,3 +1,26 @@
+/*==================== INITIAL PAGE ====================*/
+
+// Get the button and main content elements
+const revealButton = document.getElementById('reveal-button');
+const overlay = document.getElementById('overlay');
+const mainContent = document.getElementById('main-content');
+
+// Add click event listener to the button
+revealButton.addEventListener('click', () => {
+    // Start the enlarging animation for the button
+    revealButton.classList.add('enlarge-button');
+
+    // Wait for the enlarging animation to complete (1s in this case)
+    setTimeout(() => {
+        // Fade out the overlay
+        overlay.classList.add('fade-out');
+
+        // Show the main content
+        mainContent.classList.add('show-content');
+    }, 1000); // Match the 1s animation delay of the button enlarging
+});
+
+
 /*==================== SHOW MENU ====================*/
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),

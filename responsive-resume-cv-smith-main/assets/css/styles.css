@@ -1,17 +1,79 @@
 /*===== GOOGLE FONTS =====*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/*===== INITIAL PAGE  =====*/
+
+/* Center the button on the blank page */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f6a7f2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100; /* Make sure it is above the main content */
+  transition: opacity 0.8s ease;
+}
+
+/* Style for the reveal button */
+.reveal-button {
+  padding: 1rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: #f8ab47;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.5s ease;
+}
+
+/* Animation to enlarge the button */
+.enlarge-button {
+  transform: scale(50); /* Scale up the button significantly */
+  transition: transform 1s ease; /* Transition for the enlargement */
+}
+
+/* Hide the overlay when the animation is done */
+.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Main content initially hidden */
+.main-content {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* After the animation is done, the main content becomes visible */
+.show-content {
+  display: block;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Fade-in animation for the main content */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
   
   /*========== Colors ==========*/
-  --title-color: #0B0A0A;
-  --text-color: #403A3A;
-  --text-color-light: #707070;
-  --container-color: #FAFAFA;
-  --container-color-alt: #F0EFEF;
-  --body-color: #FCFCFC;
+  --title-color: #FD5A46;
+  --text-color: #5124b9;
+  --text-color-light: #d78d05;
+  --container-color: #f99fbd;
+  --container-color-alt: #f8e3c1;
+  --body-color: #219d6d;
 
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
@@ -233,6 +295,10 @@ img{
   width: calc(100% - 3rem);
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
+}
+
+#area-cv {
+  border: 5px solid black; /* This adds a thick black border */
 }
 
 .bd-grid{
