@@ -71,10 +71,10 @@
   --title-color: #D55E2B;
   --text-color: #5124B9;
   --text-color-light: #2BD55E;
-  --container-color: #F7EFE2;
-  --container-color-alt: #F7EFE2;
-  --body-color: #F7EFE2;
-  --area-cv-border: 5px solid #FF5B22;
+  --container-color: #F8E3C1;
+  --container-color-alt: #F8E3C1;
+  --body-color: #F8E3C1;
+
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --h1-font-size: 1.5rem;
@@ -98,10 +98,6 @@
   --z-fixed: 100;
 }
 
-#area-cv {
-  border: var(--area-cv-border); /* Use the CSS variable here */
-}
-
 /*========== BASE ==========*/
 *,::before,::after{
   box-sizing: border-box;
@@ -113,13 +109,11 @@ html{
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme{
-  --title-color: #000000;
-  --text-color: #000000;
-  --text-color-light: #818181;
-  --container-color: #ffffff;
-  --container-color-alt: #ffffff;
-  --body-color: #ffffff;
-  --area-cv-border: 5px solid #2b2b2b;
+  --title-color: #F2F2F2;
+  --text-color: #BFBFBF;
+  --container-color: #212121;
+  --container-color-alt: #181616;
+  --body-color: #2B2B2B;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -301,6 +295,10 @@ img{
   width: calc(100% - 3rem);
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
+}
+
+#area-cv {
+  border: 5px solid #5124B9; /* This adds a thick black border */
 }
 
 .bd-grid{
