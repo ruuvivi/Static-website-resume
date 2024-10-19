@@ -75,10 +75,11 @@ function scrollTop(){
 }
 window.addEventListener('scroll', scrollTop)
 
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== DARK LIGHT THEME ====================*/  
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
-const iconTheme = 'bxs-palette'
+const iconPalette = 'bxs-palette'  // Palette icon for dark theme
+const iconPrinter = 'bxs-printer'  // Printer icon for light theme
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme')
@@ -86,27 +87,32 @@ const selectedIcon = localStorage.getItem('selected-icon')
 
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'bxs-printer' : 'bxs-palette'
+const getCurrentIcon = () => document.body.classList.contains(darkTheme) ? iconPalette : iconPrinter
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+  // If the validation is fulfilled, we set the theme and icon accordingly
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === 'bxs-printer' ? 'add' : 'remove'](iconTheme)
-  console.log(themeButton.classList)
+  themeButton.classList[selectedIcon === iconPalette ? 'add' : 'remove'](iconPalette)
+  themeButton.classList[selectedIcon === iconPrinter ? 'add' : 'remove'](iconPrinter)
 }
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
+    // Toggle the dark theme and icon
     document.body.classList.toggle(darkTheme)
-    themeButton.classList.toggle(iconTheme)
-    console.log(themeButton.classList)
+    if (document.body.classList.contains(darkTheme)) {
+        themeButton.classList.remove(iconPrinter)
+        themeButton.classList.add(iconPalette)
+    } else {
+        themeButton.classList.remove(iconPalette)
+        themeButton.classList.add(iconPrinter)
+    }
     // We save the theme and the current icon that the user chose
-    console.log(getCurrentIcon())
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
 
 /*==================== REDUCE THE SIZE AND PRINT ON AN A4 SHEET ====================*/ 
 function scaleCV(){
@@ -127,7 +133,7 @@ let resumeButton = document.getElementById('resume-button')
 // Html2pdf options
 let opt = {
     margin:       0,
-    filename:     'myResume.pdf',
+    filename:     'Ruuskanen_Vivi_resume.pdf',
     image:        { type: 'jpeg', quality: 0.98 },
     html2canvas:  { scale: 4 },
     jsPDF:        { format: 'a4', orientation: 'portrait' }

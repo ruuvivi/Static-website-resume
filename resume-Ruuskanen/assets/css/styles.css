@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f6a7f2;
+  background-color: #F7EFE2;
   position: fixed;
   width: 100%;
   top: 0;
@@ -23,7 +23,7 @@
   padding: 1rem 1rem;
   font-size: 1.5rem;
   cursor: pointer;
-  background-color: #f8ab47;
+  background-color: #F04923;
   color: white;
   border: none;
   border-radius: 5px;
@@ -68,13 +68,14 @@
   --header-height: 3rem;
   
   /*========== Colors ==========*/
-  --title-color: #D55E2B;
+  --title-color: #E22028;
   --text-color: #5124B9;
-  --text-color-light: #2BD55E;
-  --container-color: #F7EFE2;
-  --container-color-alt: #F7EFE2;
-  --body-color: #F7EFE2;
-  --area-cv-border: 5px solid #FF5B22;
+  --text-color-light: #00A86B;
+  --container-color: #ebe3d6;
+  --container-color-alt: #ebe3d6;
+  --body-color: #ebe3d6;
+  --area-cv-border: 5px solid #E22028;
+  --resume__left-border: 5px solid #00A86B;
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --h1-font-size: 1.5rem;
@@ -102,6 +103,10 @@
   border: var(--area-cv-border); /* Use the CSS variable here */
 }
 
+.resume__left {
+  border: var(--resume__left-border); /* Corrected variable name */
+}
+
 /*========== BASE ==========*/
 *,::before,::after{
   box-sizing: border-box;
@@ -115,11 +120,12 @@ html{
 body.dark-theme{
   --title-color: #000000;
   --text-color: #000000;
-  --text-color-light: #818181;
+  --text-color-light: #717070;
   --container-color: #ffffff;
   --container-color-alt: #ffffff;
   --body-color: #ffffff;
   --area-cv-border: 5px solid #2b2b2b;
+  --resume__left-border: 5px solid #717070;
 }
 
 /*========== Button Dark/Light ==========*/
@@ -168,12 +174,12 @@ body.scale-cv{
   display: none;
 }
 
-.scale-cv .bd-container{
+.scale-cv .bd-container {
   max-width: 595px;
 }
 
 .scale-cv .section{
-  padding: 1.5rem 0 .80rem;
+  padding: 3.11rem 0 .80rem; /*top,right,bottom,left*/
 }
 
 .scale-cv .section-title{
@@ -676,7 +682,7 @@ bottom: 5rem;
   }
 
   .home__container{
-    gap: 1.5rem; 
+    gap: 1.7rem; 
   }
 
   .home__button-movil{
