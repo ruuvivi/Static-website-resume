@@ -572,6 +572,12 @@ img{
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-1);
 }
+
+.certificate__where{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  color: #00A86B;
+}
 /*========== REFERENCES ==========*/
 .references__content{
   gap: .25rem;
