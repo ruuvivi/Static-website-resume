@@ -100,11 +100,11 @@
 }
 
 #area-cv {
-  border: var(--area-cv-border); /* Use the CSS variable here */
+  border: var(--area-cv-border);
 }
 
 .resume__left {
-  border: var(--resume__left-border); /* Corrected variable name */
+  border: var(--resume__left-border);
 }
 
 /*========== BASE ==========*/
@@ -169,7 +169,7 @@ body.scale-cv{
 }
 
 /*========== Classes modified to reduce size and print on A4 sheet ==========*/
-.scale-cv .change-theme,
+/*.scale-cv .change-theme,
 .scale-cv .generate-pdf{
   display: none;
 }
@@ -179,9 +179,9 @@ body.scale-cv{
 }
 
 .scale-cv .section{
-  padding: 3.11rem 0 .80rem; /*top,right,bottom,left*/
-}
-
+  padding: 1.2rem 0 .80rem; /*top,right,bottom,left*/
+/*}
+/*
 .scale-cv .section-title{
   margin-bottom: .75rem;
 }
@@ -252,6 +252,7 @@ body.scale-cv{
 .scale-cv .interests__container{
   column-gap: 2.5rem;
 }
+*/
 
 body{
   margin: 0 0 var(--header-height) 0;
@@ -459,6 +460,26 @@ img{
   background-color: var(--text-color);
   color: var(--container-color);
 }
+
+/*========== DOWNLOAD BUTTON DESKTOP ==========*/
+
+#downloadButton {
+  display: inline-block;
+  border: 2px solid var(--text-color);
+  color: var(--title-color);
+  padding: 1rem 2rem;
+  border-radius: .25rem;
+  font-weight: var(--font-medium);
+  margin-top: var(--mb-3);
+  text-align: center;
+}
+
+#downloadButton:hover {
+  background-color: var(--text-color);
+  color: var(--container-color);
+}
+
+
 /*========== SOCIAL ==========*/
 .social__container{
   grid-template-columns: max-content;
@@ -523,8 +544,13 @@ img{
   gap: .5rem;
 }
 
-.education__title,
 .experience__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+
+}
+
+.education__title{
   font-size: var(--h3-font-size);
 }
 
@@ -573,10 +599,9 @@ img{
   margin-bottom: var(--mb-1);
 }
 
-.certificate__where{
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-1);
-  color: #00A86B;
+.certificate__provider{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
 }
 /*========== REFERENCES ==========*/
 .references__content{

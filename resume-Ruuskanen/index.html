@@ -10,7 +10,7 @@
         <!--========== CSS ==========-->
         <link rel="stylesheet" href="assets/css/styles.css">
 
-        <title>Responsive resume cv</title>
+        <title>Resume cv</title>
     </head>
     <body>
         <!--========== button to reveal main page ==========-->
@@ -89,6 +89,11 @@
                                 <h3 class="home__profession">Web developer</h3>
 
                                 <!-- Button to generate and download the pdf. Available for desktop. -->
+                                
+                                <a href="assets/pdf/Ruuskanen_Vivi_CV.pdf" download="Ruuskanen_Vivi_CV.pdf">
+                                    <button id="downloadButton">Download</button>
+                                </a>
+                                <!-- Button to generate and download the pdf. Available for mobile. -->
                                 <div>
                                     <a download="" href="assets/pdf/Ruuskanen_Vivi_CV.pdf" class="home__button-movil">Download</a>
                                 </div>
@@ -109,11 +114,10 @@
                             </div>
                         </div>
                         <!-- Theme change button -->
-                        <i class='bx bxs-printer change-theme' title="Theme" id="theme-button"></i>
-                        
+                        <i class='bx bxs-yin-yang change-theme' title="Theme" id="theme-button"></i>                        
                         <!-- Button to generate and download the pdf. Available for desktop. -->
                         
-                        <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button"></i>
+                        <!-- <i class='bx bx-download generate-pdf' title="Generate PDF" id="resume-button"></i> -->
                     </section>
                     
                     <!--========== SOCIAL ==========-->
@@ -122,23 +126,20 @@
 
                         <div class="social__container bd-grid">
                             <a href="https://www.linkedin.com/in/vivi-ruuskanen/" target="_blank" class="social__link">
-                                <i class='bx bxl-linkedin-square social__icon' ></i>@ruuvivi
+                                <i class='bx bxl-linkedin-square social__icon' ></i>/in/vivi-ruuskanen
                             </a>
 
-                            <a href="https://www.facebook.com/ruuskvivi/" target="_blank" class="social__link">
-                                <i class='bx bxl-facebook-square social__icon' ></i>@ruuvivi
+                            <a href="https://github.com/ruuvivi/" target="_blank" class="social__link">
+                                <i class='bx bxl-github social__icon' ></i>@ruuvivi
                             </a>
 
-                            <a href="https://www.instagram.com/ruuvivi/?next=%2Fshabuhouse.fi%2F%3Fhl%3Den&hl=en" target="_blank" class="social__link">
-                                <i class='bx bxl-instagram-alt social__icon' ></i>@ruuvivi
-                            </a>
                         </div>
                     </section>
 
                     <!--========== PROFILE ==========-->
                     <section class="profile section" id="profile">
                         <h2 class="section-title">Profile</h2>
-                        <p class="profile__description">Insert here a descripton</p>
+                        <p class="profile__description">A motivated and results-driven junior developer with a strong focus on continuously improving technical skills through hands-on implementation. Transitioning careers has honed my ability to efficiently solve problems and quickly adapt to new challenges.</p>
                         
                     </section>
                     
@@ -155,9 +156,9 @@
                                 </div>
 
                                 <div class="education__data bd-grid">
-                                    <h3 class="education__title">BACHELOR IN ELECTRICAL ENGINEERING</h3>
-                                    <span class="education__studies">Aalto University</span>
-                                    <span class="education__year">2023 - 2025</span>
+                                    <h3 class="education__title">BACHELOR'S DEGREE IN ELECTRICAL ENGINEERING</h3>
+                                    <span class="education__studies">Aalto University (Espoo)</span>
+                                    <span class="education__year">2023 - ongoing</span>
                                 </div>
                             </div>
 
@@ -168,22 +169,22 @@
                                 </div>
 
                                 <div class="education__data bd-grid">
-                                    <h3 class="education__title">COMPLEMENTARY STUDIES HERE</h3>
-                                    <span class="education__studies">WHERE</span>
-                                    <span class="education__year">WHEN</span>
+                                    <h3 class="education__title">BACHELOR's DEGREE IN CULTURAL RESEARCH STUDIES</h3>
+                                    <span class="education__studies">University of Helsinki (Helsinki)</span>
+                                    <span class="education__year">2019-2020</span>
                                 </div>
                             </div>
 
                             <div class="education__content">
                                 <div class="education__time">
                                     <span class="education__rounder"></span>
-                                    <!-- <span class="education__line"></span> -->
+                                    <span class="education__line"></span>
                                 </div>
 
                                 <div class="education__data bd-grid">
-                                    <h3 class="education__title">COMPLEMENTARY STUDIES HERE</h3>
-                                    <span class="education__studies">WHERE</span>
-                                    <span class="education__year">WHEN</span>
+                                    <h3 class="education__title">BACHELOR'S DEGREE IN PHYSICAL THERAPY</h3>
+                                    <span class="education__studies">Arcada University of Applied Sciences (Helsinki)</span>
+                                    <span class="education__year">2015-2018</span>
                                 </div>
                             </div>
 
@@ -197,6 +198,15 @@
 
                         <div class="skills__content bd-grid">
                             <ul class="skills__data">
+
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span> Excel
+                                </li>
+
+                                <li class="skills__name">
+                                    <span class="skills__circle"></span> Data analytics
+                                </li>
+
                                 <li class="skills__name">
                                     <span class="skills__circle"></span> Html
                                 </li>
@@ -244,7 +254,7 @@
                                     </div>
 
                                     <div class="experience__data bd-grid">
-                                        <h3 class="experience__title">TECHNICAL OPERATIONS SPECIALIST</h3>
+                                        <h4 class="experience__title">Technical operations specialist</h4>
                                         <span class="experience__company">From May 2022 - Present | Farol Oy</span>
                                         <p class="experience__description">Analysing and monitoring business operations, supporting engineering team to automate processes, reports and implementing new technologies. Feeding B2B business requirements and system design into product roadmap. Active participation in testing new products and features.</p>
                                     </div>
@@ -257,7 +267,7 @@
                                     </div>
 
                                     <div class="experience__data bd-grid">
-                                        <h3 class="experience__title">CUSTOMER SERVICE ADVISOR</h3>
+                                        <h4 class="experience__title">Customer service advisor</h4>
                                         <span class="experience__company">From July 2021 - Present | P&T Finland Oy</span>
                                         <p class="experience__description">Customer management in several languages - Finnish, Swedish, English. Escalation and collaboration with sales team, supporting and monitoring negotiation of new customer contracts. Supporting invoicing and clearing process. Creating documentation and helping on diagnosing points of improvement of the CX team.</p>
                                     </div>
@@ -266,11 +276,11 @@
                                 <div class="experience__content">
                                     <div class="experience__time">
                                         <span class="experience__rounder"></span>
-                                        <!-- <span class="experience__line"></span> -->
+                                        <span class="experience__line"></span>
                                     </div>
 
                                     <div class="experience__data bd-grid">
-                                        <h3 class="experience__title">MUSEUM GUIDE</h3>
+                                        <h4 class="experience__title">Museum guide</h4>
                                         <span class="experience__company">From June 2020 - 2August 021 | Tuusula Municipality</span>
                                         <p class="experience__description">Delivering visitor-first service in a professional and friendly manner. Providing security in the exhibitions, making sure visitors follow both museum and exhibition requirements. Appointment booking and overall scheduling. Customer service and administrational tasks.</p>
                                     </div>
@@ -283,7 +293,7 @@
                                     </div>
 
                                     <div class="experience__data bd-grid">
-                                        <h3 class="experience__title">PHYSICAL THERAPIST</h3>
+                                        <h4 class="experience__title">Physical therapist</h4>
                                         <span class="experience__company">From May 2019 - December 2019 | Seure Henkilöstöpalvelut Oy</span>
                                         <p class="experience__description">Assessing patient's neurological status together with a multidisciplinary team. Acute trauma physical therapy and assesment of patient's need for assistive devices and further rehabilitation.</p>
                                     </div>
@@ -296,7 +306,7 @@
                                     </div>
 
                                     <div class="experience__data bd-grid">
-                                        <h3 class="experience__title">CUSTOMER SERVICE ADVISOR</h3>
+                                        <h4 class="experience__title">Customer service advisor</h4>
                                         <span class="experience__company">From March 2015 - December 2015 | Tapanilan Urheilutalosäätiö</span>
                                         <p class="experience__description">Customer management, centre management on-site. Negotiating of customer contracts and supporting billing and clearing process.</p>
                                     </div>
@@ -308,9 +318,10 @@
                         <!--========== CERTIFICATES ==========-->
                         <section class="certificates section" id="certificate">
                             <h2 class="section-title">Course certificates</h2>
-                            <h3 class="certificate__where">Aalto University</h3>
 
                             <div class="certificate__container bd-grid">
+
+                                <span class="certificate__provider">Aalto University</span>
 
                                 <div class="certificate__content">
                                     <h4 class="certificate__title">Mathematics software, Matlab (2024)</h4>
@@ -351,6 +362,13 @@
                                 <div class="certificate__content">
                                     <h4 class="certificate__title">Programming 2, Scala (2024)</h4>
                                     <p class="certificate__description">Understanding the essential structure and operation of computers and how to measure and optimize program performance. Key concepts, i.e. abstract interfaces, recursion, and basic algorithm design.</p>
+                                </div>
+
+                                <span class="certificate__provider">University of Helsinki</span>
+
+                                <div class="certificate__content">
+                                    <h4 class="certificate__title">Full Stack Open, JavaScript, HTML, CSS (ongoing 60 %)</h4>
+                                    <p class="certificate__description">Applying React, Redux, Node.js, MongoDB, GraphQL and TypeScrip to developing modern web application using JavaScript. The main focus is on single page applications implemented using the React library, and the REST interfaces implemented with Node.js that support them.</p>
                                 </div>
                                 
                             </div>

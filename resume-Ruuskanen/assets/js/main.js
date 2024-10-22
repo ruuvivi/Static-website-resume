@@ -76,55 +76,82 @@ function scrollTop(){
 window.addEventListener('scroll', scrollTop)
 
 /*==================== DARK LIGHT THEME ====================*/  
-const themeButton = document.getElementById('theme-button')
-const darkTheme = 'dark-theme'
-const iconPalette = 'bxs-palette'  // Palette icon for dark theme
-const iconPrinter = 'bxs-printer'  // Printer icon for light theme
+// Function to check and apply the current theme
+function applyTheme() {
+    const themeButton = document.getElementById('theme-button');
+    const currentTheme = localStorage.getItem('theme') || 'light';
 
-// Previously selected topic (if user selected)
-const selectedTheme = localStorage.getItem('selected-theme')
-const selectedIcon = localStorage.getItem('selected-icon')
-
-// We obtain the current theme that the interface has by validating the dark-theme class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
-const getCurrentIcon = () => document.body.classList.contains(darkTheme) ? iconPalette : iconPrinter
-
-// We validate if the user previously chose a topic
-if (selectedTheme) {
-  // If the validation is fulfilled, we set the theme and icon accordingly
-  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-  themeButton.classList[selectedIcon === iconPalette ? 'add' : 'remove'](iconPalette)
-  themeButton.classList[selectedIcon === iconPrinter ? 'add' : 'remove'](iconPrinter)
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeButton.classList.remove('bxs-yin-yang');
+        themeButton.classList.add('bxs-palette');
+    } else {
+        document.body.classList.remove('dark-theme');
+        themeButton.classList.remove('bxs-palette');
+        themeButton.classList.add('bxs-yin-yang');
+    }
 }
 
-// Activate / deactivate the theme manually with the button
-themeButton.addEventListener('click', () => {
-    // Toggle the dark theme and icon
-    document.body.classList.toggle(darkTheme)
-    if (document.body.classList.contains(darkTheme)) {
-        themeButton.classList.remove(iconPrinter)
-        themeButton.classList.add(iconPalette)
+// Function to toggle theme
+function toggleTheme() {
+    const themeButton = document.getElementById('theme-button');
+    const isDark = document.body.classList.contains('dark-theme');
+
+    if (isDark) {
+        document.body.classList.remove('dark-theme');
+        localStorage.setItem('theme', 'light');
+        themeButton.classList.remove('bxs-palette');
+        themeButton.classList.add('bxs-yin-yang');
     } else {
-        themeButton.classList.remove(iconPalette)
-        themeButton.classList.add(iconPrinter)
+        document.body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark');
+        themeButton.classList.remove('bxs-yin-yang');
+        themeButton.classList.add('bxs-palette');
     }
-    // We save the theme and the current icon that the user chose
-    localStorage.setItem('selected-theme', getCurrentTheme())
-    localStorage.setItem('selected-icon', getCurrentIcon())
-})
+}
+
+// Event listener for the theme button
+document.getElementById('theme-button').addEventListener('click', toggleTheme);
+
+// Apply the saved theme when the page loads
+applyTheme();
+
+
+/*==================== DOWNLOAD PDF IN MOBILE OR DESKTOP ====================*/ 
+
+function toggleDownloadButtons() {
+    const desktopButton = document.getElementById('downloadButton');
+    const mobileButton = document.querySelector('.home__button-movil');
+
+    if (window.innerWidth <= 768) {
+        // Hide the desktop button, show the mobile button
+        if (desktopButton) desktopButton.style.display = 'none';
+        if (mobileButton) mobileButton.style.display = 'block';
+    } else {
+        // Show the desktop button, hide the mobile button
+        if (desktopButton) desktopButton.style.display = 'block';
+        if (mobileButton) mobileButton.style.display = 'none';
+    }
+}
+
+// Run function on page load and when the window is resized
+window.addEventListener('load', toggleDownloadButtons);
+window.addEventListener('resize', toggleDownloadButtons);
 
 
 /*==================== REDUCE THE SIZE AND PRINT ON AN A4 SHEET ====================*/ 
+/*
 function scaleCV(){
     document.body.classList.add('scale-cv')
 }
-
+*/
 /*==================== REMOVE THE SIZE WHEN THE CV IS DOWNLOADED ====================*/ 
-function removeScale(){
+/*function removeScale(){
     document.body.classList.remove('scale-cv')
 }
-
+*/
 /*==================== GENERATE PDF ====================*/ 
+/*
 // PDF generated area
 let areaCv = document.getElementById('area-cv')
 
@@ -154,4 +181,4 @@ resumeButton.addEventListener('click', () =>{
 
     // 3. The .scale-cv class is removed from the body after 5 seconds to return to normal size.
     setTimeout(removeScale, 5000)
-})
+})*/
