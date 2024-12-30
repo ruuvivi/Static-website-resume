@@ -1,6 +1,6 @@
 /*==================== INITIAL PAGE ====================*/
 
-// Get the button and main content elements
+// Get reveal button and main content elements
 const revealButton = document.getElementById('reveal-button');
 const overlay = document.getElementById('overlay');
 const mainContent = document.getElementById('main-content');
@@ -10,12 +10,12 @@ revealButton.addEventListener('click', () => {
     // Start the enlarging animation for the button
     revealButton.classList.add('enlarge-button');
 
-    // Wait for the enlarging animation to complete (1s in this case)
+    // Wait for the enlarging animation to complete (1 s)
     setTimeout(() => {
-        // Fade out the overlay
+        // Fade out
         overlay.classList.add('fade-out');
 
-        // Show the main content
+        // Show main content
         mainContent.classList.add('show-content');
     }, 1000); // Match the 1s animation delay of the button enlarging
 });
@@ -29,7 +29,7 @@ const showMenu = (toggleId, navId) =>{
     // Validate that variables exist
     if(toggle && nav){
         toggle.addEventListener('click', ()=>{
-            // We add the show-menu class to the div tag with the nav__menu class
+            // Add the show-menu class to the div tag with the nav__menu class
             nav.classList.toggle('show-menu')
         })
     }
@@ -41,7 +41,7 @@ const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction(){
     const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
+    // When clicking on each nav__link, the show-menu class s removed
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
@@ -75,7 +75,7 @@ function scrollTop(){
 }
 window.addEventListener('scroll', scrollTop)
 
-/*==================== DARK LIGHT THEME ====================*/  
+/*==================== THEME ====================*/  
 // Function to check and apply the current theme
 function applyTheme() {
     const themeButton = document.getElementById('theme-button');
@@ -137,48 +137,3 @@ function toggleDownloadButtons() {
 // Run function on page load and when the window is resized
 window.addEventListener('load', toggleDownloadButtons);
 window.addEventListener('resize', toggleDownloadButtons);
-
-
-/*==================== REDUCE THE SIZE AND PRINT ON AN A4 SHEET ====================*/ 
-/*
-function scaleCV(){
-    document.body.classList.add('scale-cv')
-}
-*/
-/*==================== REMOVE THE SIZE WHEN THE CV IS DOWNLOADED ====================*/ 
-/*function removeScale(){
-    document.body.classList.remove('scale-cv')
-}
-*/
-/*==================== GENERATE PDF ====================*/ 
-/*
-// PDF generated area
-let areaCv = document.getElementById('area-cv')
-
-let resumeButton = document.getElementById('resume-button')
-
-// Html2pdf options
-let opt = {
-    margin:       0,
-    filename:     'Ruuskanen_Vivi_resume.pdf',
-    image:        { type: 'jpeg', quality: 0.98 },
-    html2canvas:  { scale: 4 },
-    jsPDF:        { format: 'a4', orientation: 'portrait' }
-  };
-
-// Function to call areaCv and Html2Pdf options 
-function generateResume(){
-    html2pdf(areaCv, opt)
-}
-
-// When the button is clicked, it executes the three functions
-resumeButton.addEventListener('click', () =>{
-    // 1. The class .scale-cv is added to the body, where it reduces the size of the elements
-    scaleCV()
-
-    // 2. The PDF is generated
-    generateResume()
-
-    // 3. The .scale-cv class is removed from the body after 5 seconds to return to normal size.
-    setTimeout(removeScale, 5000)
-})*/

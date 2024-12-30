@@ -506,7 +506,7 @@ img{
   margin-right: .75rem;
 }
 
-/*========== HIDE PHONE NUMBER AND ADDRESS==========*/
+/*========== HIDE PHONE NUMBER ==========*/
 #hide {
   display: none; /* Hides the content */
 }
