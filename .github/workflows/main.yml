@@ -3,7 +3,7 @@ name: Synchronize S3 bucket to GitHub repository
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   deploy:
