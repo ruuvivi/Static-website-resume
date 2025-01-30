@@ -1,23 +1,21 @@
 /*==================== INITIAL PAGE ====================*/
 
-// Get reveal button and main content elements
+// reveal button, overlay and main content
 const revealButton = document.getElementById('reveal-button');
 const overlay = document.getElementById('overlay');
 const mainContent = document.getElementById('main-content');
 
-// Add click event listener to the button
 revealButton.addEventListener('click', () => {
-    // Start the enlarging animation for the button
+    // Start css animation for the button
     revealButton.classList.add('enlarge-button');
 
-    // Wait for the enlarging animation to complete (1 s)
+    // animation = 1 s
     setTimeout(() => {
-        // Fade out
+        // fade out
         overlay.classList.add('fade-out');
-
-        // Show main content
+        // main content
         mainContent.classList.add('show-content');
-    }, 1000); // Match the 1s animation delay of the button enlarging
+    }, 1000); // completes button animation before overlay fades out and main cointent -> revealed
 });
 
 
